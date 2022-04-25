@@ -1,0 +1,14 @@
+% First line 4 Jobs x 5 Machines - 3rd digit means that each machine can perform all operations
+% Each line = 1 Job containing - (Number of Operations for the Job), number of machines for each operation, [machine, time 
+% tuple], hence if the number of machines for each operation = 5 there will be 5 tuples Machine, Time for that operation
+% example Job 1 has 3 operations - First Op can be executed by machine1 with 2 units of time, machine2 with 5 units of time
+% and so on
+
+
+4	5	5
+ 3  5 1 2 2 5 3 4 4 1 5 2 5 1 5 2 4 3 5 4 7 5 5 5 1 4 2 5 3 5 4 4 5 5
+ 3  5 1 2 2 5 3 4 4 7 5 8 5 1 5 2 6 3 9 4 8 5 5 5 1 4 2 5 3 4 4 54 5 5
+ 4  5 1 9 2 8 3 6 4 7 5 9 5 1 6 2 1 3 2 4 5 5 4 5 1 2 2 5 3 4 4 2 5 4 5 1 4 2 5 3 2 4 1 5 5
+ 2  5 1 1 2 5 3 2 4 4 5 12 5 1 5 2 1 3 2 4 1 5 2
+
+
