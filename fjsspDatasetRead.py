@@ -10,13 +10,29 @@
 #import numpy as np
 
 import re                           # Regular Expressions - to read dataset and parse
-from operator import itemgetter     # i
+from operator import itemgetter
 
 # Classes for the FJSSP
 from job import Job
 
-# Dataset must follow the standard format (Jobs x Machines x Max Operations) and each line represents a Job
-# with particular machine possibilities and tuples for each machine, time
+# Dataset must follow the standard format
+# First Line - Jobs x Machines x Max Operations
+# Each line represents a Job with particular machine possibilities and tuples for each machine, time
+# First digit number of operations for each job (n >=1)
+# Next digits number of machines that can process each operation (task) followed by pairs of [machine, time]
+# Ex...
+# 4	5	5
+#  3  5 1 2 2 5 3 4 4 1 5 2 5 1 5 2 4 3 5 4 7 5 5 5 1 4 2 5 3 5 4 4 5 5
+#  3  5 1 2 2 5 3 4 4 7 5 8 5 1 5 2 6 3 9 4 8 5 5 5 1 4 2 5 3 4 4 54 5 5
+#  4  5 1 9 2 8 3 6 4 7 5 9 5 1 6 2 1 3 2 4 5 5 4 5 1 2 2 5 3 4 4 2 5 4 5 1 4 2 5 3 2 4 1 5 5
+#  2  5 1 1 2 5 3 2 4 4 5 12 5 1 5 2 1 3 2 4 1 5 2
+# This dataset has 4 Jobs and 5 Machines (with average of 5 machines per operation - this is optional)
+# First Job (J1) has 3 operations
+# First operation for J1 can be processed by 5 machines [1,2][2,5][3,4][4,1][5,2]
+# Second Operation can also be processed by 5 machines [1,5][2,4][3,5][4,7][5,5]... and so on
+# Job 2 has 3 operations and follows the same logic
+# Job 3 has 4 operations and follows the same logic
+# Job 4 has 2 operations and follows the same logic
 
 # Kacem 4 Jobs x 5 Machines
 file = 'datasets/Kacem1_4x5.fjs'
