@@ -1,14 +1,16 @@
+# Class Job for FJSSP
+# Lupercio Luppi 2022
+#
+
 class Job:
     def __init__(self, job_id):
         self.__job_id = job_id
-        self.__job_operations = 1
-        self.__job_num_machines = 1
         self.__job_op_times = []
         self.__job_op_sequence = []
         self.__job_op_done = []
 
-    # Add Operation and time sequence for the Job
-    def add_operation_tuple(self, machine_time):
+    # Add [machine, time] vector for all Operation and time sequence for the Job
+    def add_operation_tuples(self, machine_time):
         self.__job_op_times.append(machine_time)
 
     # Display Job and Operation times
